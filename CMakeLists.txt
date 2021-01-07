@@ -128,6 +128,9 @@ include_directories(
 add_executable(detect_green src/detect_green.cpp)
 target_link_libraries(detect_green ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
+add_executable(detect_blue src/detect_blue.cpp)
+target_link_libraries(detect_blue ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+
 add_executable(draw_line src/draw_line.cpp)
 target_link_libraries(draw_line ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 

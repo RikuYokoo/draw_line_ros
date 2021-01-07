@@ -7,9 +7,7 @@
 
 using namespace std;
 
-//double x, y;
 cv::Mat output_image;
-vector<vector< cv::Point> > contours;
 
 geometry_msgs::Pose2D ms;
 class ros_image{
@@ -22,7 +20,7 @@ public:
     :it(n)
   {
     image_sub = it.subscribe("image", 1, &ros_image::imageCallback, this);
-    pub = n.advertise<geometry_msgs::Pose2D>("detect_green", 1);
+    pub = n.advertise<geometry_msgs::Pose2D>("detect_blue", 1);
   }
   ~ros_image()
   {
@@ -43,17 +41,19 @@ public:
     cv::Mat hsv_image, bin_image;
 
     /*---------------------------------------------------------------------*/
-    //cv::Mat plate = cv::Mat::zeros(720,1280 , CV_8UC3);
+    cv::Mat plate = cv::Mat::zeros(720,1280 , CV_8UC3);
     cv::cvtColor(output_image, hsv_image, CV_BGR2HSV, 3);//bgr->hsvに変換
-    cv::Scalar lower = cv::Scalar(50, 50, 50);
-    cv::Scalar upper = cv::Scalar(80, 255, 255);
+    //cv::Scalar lower = cv::Scalar(50, 50, 50);//緑
+    //cv::Scalar upper = cv::Scalar(80, 255, 255);
+    cv::Scalar lower = cv::Scalar(100, 50, 50);//青
+    cv::Scalar upper = cv::Scalar(130, 255, 255);
     cv::inRange(hsv_image, lower, upper, bin_image);//2値化?
     cv::erode(bin_image, bin_image, cv::Mat(), cv::Point(-1, -1), 3);
-    //vector<vector< cv::Point> > contours;
-    //vector<vector< cv::Mat> > contours;
+    vector<vector< cv::Point> > contours;
     cv::findContours(bin_image, contours, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_NONE);//輪郭取得
     double max_area = 0;
     int max_area_contour =-1;
+
     if(contours.size() > 0){
       for (int j = 0; j < contours.size();j++){
         double area = contourArea(contours.at(j));
@@ -82,13 +82,13 @@ public:
       }
     }
     /*---------------------------------------------------------------------*/
-    cv::imshow("image", output_image);
+    cv::imshow("detect_blue_image", output_image);
     cv::waitKey(1);
   }
 };
 
 int main(int argc, char** argv){
-  ros::init (argc, argv, "detect_green");
+  ros::init (argc, argv, "detect_blue");
   ros_image ros_image;
   ros::spin();
 

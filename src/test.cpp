@@ -6,6 +6,15 @@
 int blue_x, blue_y, b_blue_x, b_blue_y, green_x, green_y, b_green_x, b_green_y;
 
 cv::Mat draw = cv::Mat::zeros(720, 1280, CV_8UC3);
+class draw_line{
+  ros::NodeHandle n;
+  ros::Subscriber sub_green, sub_blue;
+public:
+  draw_line(){
+    ros::Subscriber sub_green = n.subscribe("detect_green", 1, drawgreenCallback);
+    ros::Subscriber sub_blue = n.subscribe("detect_blue", 1, drawblueCallback);
+  }
+
 void drawgreenCallback(const geometry_msgs::Pose2D& msg){
   //int x, y, before_x, before_y;
   double area;
@@ -30,7 +39,7 @@ void drawblueCallback(const geometry_msgs::Pose2D& msg){
   area = msg.theta;
 
   if(area > 1500){
-    cv::line(draw, cv::Point(b_blue_x, b_blue_y), cv::Point(blue_x, blue_y), cv::Scalar(255, 144, 30), 1, CV_AA);
+    cv::line(draw, cv::Point(b_blue_x, b_blue_y), cv::Point(blue_x, blue_y), cv::Scalar(255, 0, 0), 1, CV_AA);
   }
   b_blue_x = blue_x;
   b_blue_y = blue_y;
