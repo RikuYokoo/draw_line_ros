@@ -14,7 +14,7 @@ class ros_image{
   ros::NodeHandle n;
   image_transport::ImageTransport it;
   image_transport::Subscriber image_sub;
-  ros::Publisher pub;/* = n.advertise<geometry_msgs::Pose2D>("detect_green", 1);*/
+  ros::Publisher pub;
 public:
   ros_image()
     :it(n)
@@ -31,7 +31,6 @@ public:
     double radius;
     cv_bridge::CvImagePtr cv_ptr;
     try{
-      //image = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8)->image;
       cv_ptr = cv_bridge::toCvCopy(msg, sensor_msgs::image_encodings::BGR8);
     }
     catch (cv_bridge::Exception& e){
@@ -41,10 +40,7 @@ public:
     cv::Mat hsv_image, bin_image;
 
     /*---------------------------------------------------------------------*/
-    cv::Mat plate = cv::Mat::zeros(720,1280 , CV_8UC3);
     cv::cvtColor(output_image, hsv_image, CV_BGR2HSV, 3);//bgr->hsvに変換
-    //cv::Scalar lower = cv::Scalar(50, 50, 50);//緑
-    //cv::Scalar upper = cv::Scalar(80, 255, 255);
     cv::Scalar lower = cv::Scalar(100, 50, 50);//青
     cv::Scalar upper = cv::Scalar(130, 255, 255);
     cv::inRange(hsv_image, lower, upper, bin_image);//2値化?

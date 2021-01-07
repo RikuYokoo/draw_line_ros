@@ -2,12 +2,10 @@
 #include <opencv2/opencv.hpp>
 #include <geometry_msgs/Pose2D.h>
 
-//int x, y, before_x, before_y;
 int blue_x, blue_y, b_blue_x, b_blue_y, green_x, green_y, b_green_x, b_green_y;
 
 cv::Mat draw = cv::Mat::zeros(720, 1280, CV_8UC3);
 void drawgreenCallback(const geometry_msgs::Pose2D& msg){
-  //int x, y, before_x, before_y;
   double area;
   green_x = msg.x;
   green_y = msg.y;
@@ -23,7 +21,6 @@ void drawgreenCallback(const geometry_msgs::Pose2D& msg){
   cv::waitKey(1);
 }
 void drawblueCallback(const geometry_msgs::Pose2D& msg){
-  //int x, y, before_x, before_y;
   double area;
   blue_x = msg.x;
   blue_y = msg.y;

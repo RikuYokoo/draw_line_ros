@@ -12,7 +12,6 @@ int main(int argc, char** argv){
 
   cv::Mat image;
   cv::VideoCapture camera(2);//usb接続カメラ使用,パソコン内蔵を使用する場合は0にする
-  //cv::VideoCapture camera(0);//usb接続カメラ使用,パソコン内蔵を使用する場合は0にする
   if(!camera.isOpened()){
     ROS_INFO("failed to open camera.");
     return -1;
