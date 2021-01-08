@@ -41,3 +41,8 @@ git clone https://github.com/RikuYokoo/draw_line_ros.git
 |draw_line.cpp|draw_line|detect_blue,detect_green から座標を受け取り線を引く.|
 
 ---
+## 動画
+[動画のリンク]()
+
+---
+## ライセンス
