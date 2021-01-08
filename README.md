@@ -14,7 +14,7 @@
 ---
 ## 環境構築  
 - ROSのインストール
-  - [こちらを利用しました](https://github.com/ryuichiueda/ros_setup_scripts_Ubuntu18.04_desktop)  
+  - [こちら](https://github.com/ryuichiueda/ros_setup_scripts_Ubuntu18.04_desktop)を利用しインストールさせていただきました.  
 - opencvのインストール  
   - [公式サイト](https://opencv.org/)  
 - パッケージのクローン
