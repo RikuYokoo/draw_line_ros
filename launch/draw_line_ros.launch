@@ -3,4 +3,5 @@
   <node pkg="draw_line_ros" name="detect_green" type="detect_green" required="true"/>
   <node pkg="draw_line_ros" name="detect_blue" type="detect_blue" required="true"/>
   <node pkg="draw_line_ros" name="draw_line" type="draw_line" required="true"/>
+  <node pkg="draw_line_ros" name="detect_image" type="detect_image" required="true"/>
 </launch>

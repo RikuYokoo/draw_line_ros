@@ -12,7 +12,7 @@ void drawgreenCallback(const geometry_msgs::Pose2D& msg){
   area = msg.theta;
 
   if(area > 1500){
-    cv::line(draw, cv::Point(b_green_x, b_green_y), cv::Point(green_x, green_y), cv::Scalar(0, 255, 0), 1, CV_AA);
+    cv::line(draw, cv::Point(b_green_x, b_green_y), cv::Point(green_x, green_y), cv::Scalar(0, 255, 0), 3, CV_AA);
   }
   b_green_x = green_x;
   b_green_y = green_y;
@@ -27,7 +27,7 @@ void drawblueCallback(const geometry_msgs::Pose2D& msg){
   area = msg.theta;
 
   if(area > 1500){
-    cv::line(draw, cv::Point(b_blue_x, b_blue_y), cv::Point(blue_x, blue_y), cv::Scalar(255, 144, 30), 1, CV_AA);
+    cv::line(draw, cv::Point(b_blue_x, b_blue_y), cv::Point(blue_x, blue_y), cv::Scalar(255, 144, 30), 3, CV_AA);
   }
   b_blue_x = blue_x;
   b_blue_y = blue_y;

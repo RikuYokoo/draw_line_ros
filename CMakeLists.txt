@@ -137,6 +137,9 @@ target_link_libraries(draw_line ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 add_executable(web_camera src/web_camera.cpp)
 target_link_libraries(web_camera ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
+add_executable(detect_image src/detect_image.cpp)
+target_link_libraries(detect_image ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/draw_line_ros.cpp

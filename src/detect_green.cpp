@@ -73,11 +73,14 @@ public:
         pub.publish(ms);
         cout << max_area << endl;
         radius = (double)count/2;
-        cv::circle(output_image, cv::Point(x, y), 50, cv::Scalar(0, 0, 255), 3, 4);
+        cv::circle(output_image, cv::Point(x, y), 50, cv::Scalar(0, 255, 0), 3, 4);
       }
+    }else{
+      ms.theta = 0;
+      pub.publish(ms);
     }
     /*---------------------------------------------------------------------*/
-    cv::imshow("detect_green_image", output_image);
+    //cv::imshow("detect_green_image", output_image);
     cv::waitKey(1);
   }
 };
