@@ -11,6 +11,9 @@
 - OpenCV 3.2.0  
 - webカメラ 
   - [こちらの製品](http://www.sac-corp.jp/product/contents/actioncam/ac200.html)を使用しました.  
+  - webカメラを使用しているためパソコン内蔵カメラを使用する場合は[web_camera.cpp](https://github.com/RikuYokoo/draw_line_ros/blob/main/src/web_camera.cpp)内の
+  `cv::VideoCapture camera(2);`
+  を`camera(0)`に変更してください  
 ---
 ## 環境構築  
 - ROSのインストール
