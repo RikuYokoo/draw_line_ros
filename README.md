@@ -42,7 +42,8 @@ git clone https://github.com/RikuYokoo/draw_line_ros.git
 
 ---
 ## 動画
-[動画のリンク]()
+[動画のリンク](https://www.youtube.com/watch?v=3omE_8d17WQ)
+ - 動画が横長で画質が悪くなっています
 
 ---
 ## ライセンス
