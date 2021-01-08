@@ -51,4 +51,4 @@ git clone https://github.com/RikuYokoo/draw_line_ros.git
 
 ---
 ## ライセンス
-[BSD 3-Clause "New" or "Revised" License](https://github.com/RikuYokoo/draw_line_ros/blob/main/LICENSE)
+[BSD 3-Clause License](https://github.com/RikuYokoo/draw_line_ros/blob/main/LICENSE)
