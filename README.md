@@ -2,7 +2,8 @@
 ロボットシステム学課題2
 ---
 ## 概要  
-- rosとwebカメラ,opencvを使用し作成した.  
+- ロボットシステム学の課題2で,ros,opencv,webカメラを使用し作成した.  
+- ペンを用いなくても線が引けます.
 ---
 ## 環境  
 - ubuntu 18.04.5 LTS  
@@ -12,13 +13,23 @@
 ---
 ## 環境構築  
 - rosのインストール
-  -[こちらを利用しました]()  
+  -[こちらを利用しました](https://github.com/ryuichiueda/ros_setup_scripts_Ubuntu18.04_desktop)  
 - opencvのインストール  
-  -[こちらから]()  
+  -[公式サイト](https://opencv.org/)  
 - パッケージのクローン
 ```sh
 cd ~/catkin_ws/src  
 git clone https://github.com/RikuYokoo/draw_line_ros.git  
 (cd ~/catkin_ws && catkin_make)  
 ```
+---
+## 実行方法
+- roscoreを立ち上げます.
+  - `roscore`  
+もう一つ端末を開きます.  
+- パッケージを起動させます.
+  - `roslaunch draw_line_ros draw_line_ros.launch`  
+  - カメラ画像等が立ち上がります.  
+---
+## パッケージ概要
 ---
