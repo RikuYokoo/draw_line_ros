@@ -41,7 +41,7 @@ public:
 
     /*---------------------------------------------------------------------*/
     cv::cvtColor(output_image, hsv_image, CV_BGR2HSV, 3);//bgr->hsvに変換
-    cv::Scalar lower = cv::Scalar(100, 50, 50);//青
+    cv::Scalar lower = cv::Scalar(100, 70, 70);//青
     cv::Scalar upper = cv::Scalar(130, 255, 255);
     cv::inRange(hsv_image, lower, upper, bin_image);//2値化?
     cv::erode(bin_image, bin_image, cv::Mat(), cv::Point(-1, -1), 3);
