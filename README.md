@@ -28,9 +28,16 @@ git clone https://github.com/RikuYokoo/draw_line_ros.git
 - roscoreを立ち上げます.
   - `roscore`  
 もう一つ端末を開きます.  
-- パッケージを起動させます.
+- ノードを起動させます.
   - `roslaunch draw_line_ros draw_line_ros.launch`  
   - カメラ画像等が立ち上がります.  
 ---
-## パッケージ概要
+## ノード概要
+|ソースファイル|ノード名|概要|
+|:--:|:--:|:--|
+|web_camera.cpp|web_camera|webカメラからの映像をPublishします.|
+|detect_blue.cpp|detect_blue|web_cameraから映像をSubscribeし青色を検出し座標をPublishする.|
+|detect_green.cpp|detect_green|web_cameraから映像をSubscribeし緑色を検出し座標をPublishする.|
+|draw_line.cpp|draw_line|detect_blue,detect_green から座標を受け取り線を引く.|
+
 ---
