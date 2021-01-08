@@ -6,16 +6,17 @@
 - ペンを用いなくても線が引けます.
 ---
 ## 環境  
-- ubuntu 18.04.5 LTS  
-- ros melodic
-- opencv 3.2.0  
-- webcamera(こちらの製品)[http://www.sac-corp.jp/product/contents/actioncam/ac200.html]を使用しました.  
+- Ubuntu 18.04.5 LTS  
+- ROS Melodic
+- OpenCV 3.2.0  
+- webカメラ 
+  - [こちらの製品](http://www.sac-corp.jp/product/contents/actioncam/ac200.html)を使用しました.  
 ---
 ## 環境構築  
-- rosのインストール
-  -[こちらを利用しました](https://github.com/ryuichiueda/ros_setup_scripts_Ubuntu18.04_desktop)  
+- ROSのインストール
+  - [こちらを利用しました](https://github.com/ryuichiueda/ros_setup_scripts_Ubuntu18.04_desktop)  
 - opencvのインストール  
-  -[公式サイト](https://opencv.org/)  
+  - [公式サイト](https://opencv.org/)  
 - パッケージのクローン
 ```sh
 cd ~/catkin_ws/src  
